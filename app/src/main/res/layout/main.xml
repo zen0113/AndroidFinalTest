@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/btn_round_main"
             android:fontFamily="@font/mainfont"
-            android:textSize="25sp"
+            android:textSize="23sp"
             android:text="시작하기!"
             android:layout_gravity="center"
             android:textColor="@color/black"
