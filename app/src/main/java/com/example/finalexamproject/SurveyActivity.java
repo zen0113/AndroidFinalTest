@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
-import androidx.activity.EdgeToEdge;
-
 public class SurveyActivity extends Activity implements View.OnClickListener{
 
     @Override
@@ -57,10 +55,10 @@ public class SurveyActivity extends Activity implements View.OnClickListener{
         if(rg_question10.getCheckedRadioButtonId() == R.id.radio_yes10)
             sum += 1;
 
-        Intent it = new Intent(this, DirayMainActivity.class);
+        Intent it = new Intent(this, ResultActivity.class);
 
         it.putExtra("it_name", str_name);
-        it.putExtra("it_sum", Integer.toString(sum * 10));
+        it.putExtra("it_sum", Integer.toString(100 - sum * 10));
 
         startActivity(it);
         finish();

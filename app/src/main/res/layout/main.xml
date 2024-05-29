@@ -23,7 +23,7 @@
             android:text="시작하기!"
             android:layout_gravity="center"
             android:textColor="@color/black"
-            android:layout_marginTop="260sp"
+            android:layout_marginTop="220sp"
             />
     </LinearLayout>
 

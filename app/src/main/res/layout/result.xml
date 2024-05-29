@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="80sp">
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/mainfont"
+            android:text="김슈니"
+            android:textSize="30sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/mainfont"
+            android:text="님의 마음 점수는"
+            android:textSize="30sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="10sp">
+        <TextView
+            android:id="@+id/sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/mainfont"
+            android:text="0"
+            android:textSize="80sp"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/mainfont"
+            android:text=" 점 입니다!"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="50sp">
+        <FrameLayout
+            android:layout_width="400dp"
+            android:layout_height="100dp"
+            android:padding="2dp">
+            <ImageView
+                android:id="@+id/image_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:visibility="visible"
+                android:src="@drawable/stress_1" />
+            <ImageView
+                android:id="@+id/image_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:visibility="invisible"
+                android:src="@drawable/stress_2" />
+            <ImageView
+                android:id="@+id/image_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:visibility="invisible"
+                android:src="@drawable/stress_3" />
+            <ImageView
+                android:id="@+id/image_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:visibility="invisible"
+                android:src="@drawable/stress_4" />
+            <ImageView
+                android:id="@+id/image_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:visibility="invisible"
+                android:src="@drawable/stress_5" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/explain_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mainfont"
+            android:text="매우 낮은 스트레스"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30sp"/>
+        <TextView
+            android:id="@+id/explain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/mainfont"
+            android:text="스트레스가 거의 없음"
+            android:textColor="#707070"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20sp"
+            android:lineSpacingExtra="10dp"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menu_0"
+        />
+</LinearLayout>
