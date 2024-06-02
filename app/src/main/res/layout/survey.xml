@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:layout_margin="10sp"
-    android:padding="5sp">
+    android:orientation="vertical">
     <ScrollView
         android:fillViewport="true"
         android:scrollbars="none"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
             android:orientation="vertical">
             <!-- 설문 메인 페이지 구성 -->
             <LinearLayout
@@ -31,7 +31,7 @@
                     android:text="당신에 대해 알려주세요"
                     android:textColor="@color/black"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="30sp"
+                    android:textSize="20sp"
                     android:layout_marginTop="50sp"
                     android:layout_marginBottom="200sp"
                     android:layout_gravity="center"/>
@@ -39,7 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="아래로 스크롤"
-                    android:fontFamily="@font/mainfont"
+                    android:fontFamily="@font/subfont"
                     android:textSize="20sp"
                     android:layout_marginBottom="100sp"
                     android:layout_gravity="center"/>
@@ -49,14 +49,16 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginLeft="10sp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="당신의 이름을 알려주세요!"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
                     android:layout_margin="10sp"
                     android:padding="5sp"/>
                 <EditText
@@ -65,8 +67,37 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10sp"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:hint="김슈니"
+                    android:textColorHint="#CECECE"
+                    android:padding="10sp"/>
+            </LinearLayout>
+
+            <!-- 생년월일 -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="70sp"
+                android:layout_marginLeft="10sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="당신의 생일을 알려주세요!"
+                    android:fontFamily="@font/mainfont"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_margin="10sp"
+                    android:padding="5sp"/>
+                <EditText
+                    android:id="@+id/edit_birth"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10sp"
+                    android:fontFamily="@font/mainfont"
+                    android:textSize="15sp"
+                    android:hint="2000.05.08"
                     android:textColorHint="#CECECE"
                     android:padding="10sp"/>
             </LinearLayout>
@@ -76,13 +107,15 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="50sp">
+                android:layout_marginTop="70sp"
+                android:layout_marginLeft="10sp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="당신은 여자? 남자?"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:layout_margin="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
@@ -101,7 +134,7 @@
                         android:buttonTint="#FFD262"
                         android:layout_marginEnd="20sp"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:text="여자" />
                     <RadioButton
                         android:id="@+id/radio_male"
@@ -110,7 +143,7 @@
                         android:textAlignment="center"
                         android:buttonTint="#FFD262"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:text="남자" />
                 </RadioGroup>
             </LinearLayout>
@@ -119,48 +152,50 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_margin="10sp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="최근에 스트레스를 받은 일이 많았나요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question1"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes1"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no1"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
@@ -169,41 +204,42 @@
                     android:layout_height="wrap_content"
                     android:text="일상생활에서 스트레스 요인이 있나요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question2"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes2"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no2"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
@@ -212,41 +248,42 @@
                     android:layout_height="wrap_content"
                     android:text="최근들어 잠을 충분히 자지 못했나요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question3"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes3"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no3"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
@@ -255,41 +292,42 @@
                     android:layout_height="wrap_content"
                     android:text="건강이나 가족과 관련된 걱정이 있나요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question4"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes4"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no4"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
@@ -298,84 +336,87 @@
                     android:layout_height="wrap_content"
                     android:text="일과 휴식의 균형을 유지하기 어려운가요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question5"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes5"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no5"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="지금 하는 일과 가정 생활의 균형이 유지하기 어려운가요?"
+                    android:text="지금 하는 일과 가정 생활의 균형이 유지하기 \n어려운가요?"
+                    android:lineSpacingExtra="8dp"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question6"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes6"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no6"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
@@ -384,41 +425,42 @@
                     android:layout_height="wrap_content"
                     android:text="자신의 목표를 달성하기 어려운 상황에 있나요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question7"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes7"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no7"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
@@ -427,41 +469,42 @@
                     android:layout_height="wrap_content"
                     android:text="자주 몸이 불편하거나 피로감이 있나요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question8"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes8"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no8"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
@@ -470,51 +513,54 @@
                     android:layout_height="wrap_content"
                     android:text="대인관계에서 긴장이나 갈등이 있나요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
                     android:id="@+id/radiogroup_question9"
                     android:layout_width="fill_parent"
-                    android:layout_height="70sp"
+                    android:layout_height="90sp"
                     android:orientation="horizontal"
                     android:gravity="center">
                     <RadioButton
                         android:id="@+id/radio_yes9"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no9"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="쉬는 시간이 부족하거나 휴식을 취하지 못한 적이 있나요?"
+                    android:text="쉬는 시간이 부족하거나 휴식을 취하지 못한 적이 \n있나요?"
+                    android:lineSpacingExtra="8dp"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
-                    android:layout_marginTop="50sp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="70sp"
                     android:layout_marginLeft="10sp"
                     android:padding="5sp"/>
                 <RadioGroup
@@ -526,28 +572,28 @@
                     <RadioButton
                         android:id="@+id/radio_yes10"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="예"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                     <RadioButton
                         android:id="@+id/radio_no10"
                         android:layout_width="150sp"
-                        android:layout_height="45sp"
+                        android:layout_height="50sp"
                         android:button="@color/white"
                         android:background="@drawable/radio_selector"
                         android:textColor="@drawable/text_color"
-                        android:elevation="4dp"
+                        android:elevation="2dp"
                         android:layout_margin="16dp"
                         android:text="아니오"
                         android:fontFamily="@font/mainfont"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textAlignment="center"/>
                 </RadioGroup>
             </LinearLayout>
@@ -567,26 +613,29 @@
                     android:layout_height="wrap_content"
                     android:text="설문에 전부 응답하셨나요?"
                     android:fontFamily="@font/mainfont"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:layout_marginTop="80sp"
-                    android:layout_gravity="center"/>
-                <Button
-                    android:id="@+id/send"
-                    android:layout_width="160sp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/btn_round_main"
-                    android:fontFamily="@font/mainfont"
-                    android:textSize="23sp"
-                    android:text="결과 확인하기!"
-                    android:layout_gravity="center"
+                    android:layout_marginBottom="200sp"
                     android:textColor="@color/black"
-                    android:layout_marginTop="100sp"
-                    android:layout_marginBottom="100sp"
-                    />
+                    android:layout_gravity="center"/>
+
             </LinearLayout>
+            <Button
+                android:id="@+id/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@drawable/btn_round_main"
+                android:fontFamily="@font/mainfont"
+                android:textSize="18sp"
+                android:text="결과 확인하기"
+                android:textColor="@color/black"
+                />
         </LinearLayout>
     </ScrollView>
 
 
 
-</LinearLayout>
+</RelativeLayout>

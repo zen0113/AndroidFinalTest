@@ -23,6 +23,9 @@ public class SurveyActivity extends Activity implements View.OnClickListener{
         EditText et_name = (EditText) findViewById(R.id.edit_name);
         String str_name = et_name.getText().toString();
 
+        EditText et_birth = (EditText) findViewById(R.id.edit_birth);
+        String str_birth = et_birth.getText().toString();
+
         int sum = 0;
         RadioGroup rg_question1 = (RadioGroup) findViewById(R.id.radiogroup_question1);
         if(rg_question1.getCheckedRadioButtonId() == R.id.radio_yes1)
