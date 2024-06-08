@@ -2,6 +2,8 @@ package com.example.finalexamproject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +12,7 @@ import android.widget.RadioGroup;
 
 public class SurveyActivity extends Activity implements View.OnClickListener{
 
+    private DBManager dbmgr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,13 @@ public class SurveyActivity extends Activity implements View.OnClickListener{
 
         EditText et_birth = (EditText) findViewById(R.id.edit_birth);
         String str_birth = et_birth.getText().toString();
+
+        RadioGroup rg_gender = (RadioGroup) findViewById(R.id.radiogroup_gender);
+        String str_gender = "";
+        if(rg_gender.getCheckedRadioButtonId() == R.id.radio_male)
+            str_gender = "남자";
+        if(rg_gender.getCheckedRadioButtonId() == R.id.radio_female)
+            str_gender = "여자";
 
         int sum = 0;
         RadioGroup rg_question1 = (RadioGroup) findViewById(R.id.radiogroup_question1);
@@ -57,6 +67,15 @@ public class SurveyActivity extends Activity implements View.OnClickListener{
         RadioGroup rg_question10 = (RadioGroup) findViewById(R.id.radiogroup_question10);
         if(rg_question10.getCheckedRadioButtonId() == R.id.radio_yes10)
             sum += 1;
+
+        try
+        {
+            dbmgr = new DBManager(this);
+            SQLiteDatabase sdb;
+            sdb = dbmgr.getWritableDatabase();
+
+            sdb.execSQL("insert into members values('"+str_name+"','"+str_birth+"','"+str_gender+"');");
+        }catch (SQLiteException e) {}
 
         Intent it = new Intent(this, ResultActivity.class);
 

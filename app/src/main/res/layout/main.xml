@@ -11,15 +11,12 @@
         android:layout_marginRight="50dp"
         android:layout_marginBottom="100dp"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="마음 지도 \n그려보기"
-            android:fontFamily="@font/mainfont_3"
-            android:textSize="30sp"
-            android:layout_marginTop="80sp"
-            android:textColor="@color/black"
-            android:lineSpacingExtra="10dp"/>
+        <ImageView
+            android:layout_marginTop="50sp"
+            android:layout_width="220sp"
+            android:layout_height="150sp"
+            android:src="@drawable/logo_1"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
