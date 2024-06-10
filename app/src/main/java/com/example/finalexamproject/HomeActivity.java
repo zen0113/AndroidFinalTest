@@ -16,19 +16,28 @@ public class HomeActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-//        try
-//        {
-//            DBManager dbmgr = new DBManager(this);
-//            SQLiteDatabase sdb = dbmgr.getReadableDatabase();
-//            Cursor cursor = sdb.rawQuery("select name from members", null);
-//
-//            String str_name = cursor.getString(0);
-//            TextView tv_name = (TextView) findViewById(R.id.name);
-//            tv_name.setText(str_name);
-//
-//            cursor.close();
-//            dbmgr.close();
-//        }catch (SQLiteException e) {}
+        try{
+            DBManager dbmgr = new DBManager(this);
+
+            SQLiteDatabase sdb = dbmgr.getReadableDatabase();
+
+            Cursor cursor = sdb.rawQuery("select name, birth, gender, stress from members", null);
+
+            while(cursor.moveToNext())
+            {
+                String str_name = cursor.getString(0);
+
+                TextView tv_name = (TextView) findViewById(R.id.name);
+                tv_name.setText(str_name);
+            }
+            cursor.close();
+            dbmgr.close();
+
+        }catch (SQLiteException e)
+        {
+            TextView tv_list = new TextView(this);
+            tv_list.append("DB Error!!");
+        }
 
         Button btn_menu_write =(Button) findViewById(R.id.menu_write);
         btn_menu_write.setOnClickListener(this);

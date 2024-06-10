@@ -12,7 +12,8 @@ public class DBManager extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db)
     {
-        db.execSQL("create table members(name text, birth text, gender text);");
+        db.execSQL("create table members(name text, birth text, gender text, stress text);");
+        db.execSQL("create table diray(title text, date text, stress int, memo text)");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)

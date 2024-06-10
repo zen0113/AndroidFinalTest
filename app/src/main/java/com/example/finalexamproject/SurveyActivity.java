@@ -68,19 +68,22 @@ public class SurveyActivity extends Activity implements View.OnClickListener{
         if(rg_question10.getCheckedRadioButtonId() == R.id.radio_yes10)
             sum += 1;
 
+
+        String str_stress = Integer.toString(100 - sum * 10);
+
         try
         {
             dbmgr = new DBManager(this);
             SQLiteDatabase sdb;
             sdb = dbmgr.getWritableDatabase();
 
-            sdb.execSQL("insert into members values('"+str_name+"','"+str_birth+"','"+str_gender+"');");
+            sdb.execSQL("insert into members values('"+str_name+"','"+str_birth+"','"+str_gender+"', '"+str_stress+"');");
         }catch (SQLiteException e) {}
 
         Intent it = new Intent(this, ResultActivity.class);
 
-        it.putExtra("it_name", str_name);
-        it.putExtra("it_sum", Integer.toString(100 - sum * 10));
+        //it.putExtra("it_name", str_name);
+        //it.putExtra("it_sum", Integer.toString(100 - sum * 10));
 
         startActivity(it);
         finish();

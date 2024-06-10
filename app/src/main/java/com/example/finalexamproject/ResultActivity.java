@@ -2,6 +2,10 @@ package com.example.finalexamproject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,17 +18,46 @@ public class ResultActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
 
-        Intent it = getIntent();
+        //Intent it = getIntent();
 
 
-        String str_name = it.getStringExtra("it_name");
-        String sum = it.getStringExtra("it_sum");
+        String str_name = "";
+        String sum = "";
 
-        TextView tv_name = (TextView) findViewById(R.id.name);
-        tv_name.setText(str_name);
+        //TextView tv_name = (TextView) findViewById(R.id.name);
+        //tv_name.setText(str_name);
 
-        TextView tv_sum = (TextView) findViewById(R.id.sum);
-        tv_sum.setText(sum);
+        //TextView tv_sum = (TextView) findViewById(R.id.sum);
+        //tv_sum.setText(sum);
+
+        try{
+            DBManager dbmgr = new DBManager(this);
+
+            SQLiteDatabase sdb = dbmgr.getReadableDatabase();
+
+            Cursor cursor = sdb.rawQuery("select name, birth, gender, stress from members", null);
+
+            while(cursor.moveToNext())
+            {
+                str_name = cursor.getString(0);
+                sum = cursor.getString(3);
+
+                TextView tv_name = (TextView) findViewById(R.id.name);
+                tv_name.setText(str_name);
+
+
+                TextView tv_stress = (TextView) findViewById(R.id.sum);
+                tv_stress.setText(sum);
+            }
+            cursor.close();
+            dbmgr.close();
+
+        }catch (SQLiteException e)
+        {
+            TextView tv_list = new TextView(this);
+            tv_list.append("DB Error!!");
+        }
+
 
         TextView tv_explain_title = (TextView) findViewById(R.id.explain_title);
         TextView tv_explain = (TextView) findViewById(R.id.explain);
@@ -38,6 +71,7 @@ public class ResultActivity extends Activity implements View.OnClickListener {
         ImageView img_stress33 = (ImageView) findViewById(R.id.image_33);
         ImageView img_stress44 = (ImageView) findViewById(R.id.image_44);
         ImageView img_stress55 = (ImageView) findViewById(R.id.image_55);
+
         if(sum.equals("100") || sum.equals("90"))
         {
             img_stress1.setVisibility(View.VISIBLE);

@@ -59,7 +59,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="10sp">
             <RadioGroup
-                android:id="@+id/radiogroup_gender"
+                android:id="@+id/radiogroup_stress"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -70,7 +70,7 @@
                     android:layout_height="50sp"
                     android:textAlignment="center"
                     android:button="@null"
-                    android:background="@drawable/profile_stress_1"
+                    android:background="@drawable/stress_selector_1"
                     android:layout_marginRight="20sp"/>
                 <RadioButton
                     android:id="@+id/radio_stress2"
@@ -78,7 +78,7 @@
                     android:layout_height="50sp"
                     android:textAlignment="center"
                     android:button="@null"
-                    android:background="@drawable/profile_stress_2"
+                    android:background="@drawable/stress_selector_2"
                     android:layout_marginRight="20sp"/>
                 <RadioButton
                     android:id="@+id/radio_stress3"
@@ -86,7 +86,7 @@
                     android:layout_height="50sp"
                     android:textAlignment="center"
                     android:button="@null"
-                    android:background="@drawable/profile_stress_3"
+                    android:background="@drawable/stress_selector_3"
                     android:layout_marginRight="20sp"/>
                 <RadioButton
                     android:id="@+id/radio_stress4"
@@ -94,7 +94,7 @@
                     android:layout_height="50sp"
                     android:textAlignment="center"
                     android:button="@null"
-                    android:background="@drawable/profile_stress_4"
+                    android:background="@drawable/stress_selector_4"
                     android:layout_marginRight="20sp"/>
                 <RadioButton
                     android:id="@+id/radio_stress5"
@@ -102,7 +102,7 @@
                     android:layout_height="50sp"
                     android:textAlignment="center"
                     android:button="@null"
-                    android:background="@drawable/profile_stress_5"/>
+                    android:background="@drawable/stress_selector_5"/>
 
             </RadioGroup>
         </LinearLayout>
