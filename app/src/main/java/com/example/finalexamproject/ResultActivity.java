@@ -18,20 +18,14 @@ public class ResultActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
 
-        //Intent it = getIntent();
-
-
         String str_name = "";
         String sum = "";
 
-        //TextView tv_name = (TextView) findViewById(R.id.name);
-        //tv_name.setText(str_name);
 
-        //TextView tv_sum = (TextView) findViewById(R.id.sum);
-        //tv_sum.setText(sum);
+        DBManager dbmgr = new DBManager(this);
 
         try{
-            DBManager dbmgr = new DBManager(this);
+
 
             SQLiteDatabase sdb = dbmgr.getReadableDatabase();
 

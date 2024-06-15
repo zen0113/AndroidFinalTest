@@ -27,6 +27,7 @@
                 android:id="@+id/edit_title"
                 android:layout_width="fill_parent"
                 android:layout_height="50sp"
+                android:hint="10자 이내로 적어주세요"
                 android:fontFamily="@font/mainfont"
                 android:textSize="15sp"
                 android:padding="10sp"/>
@@ -49,10 +50,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="50sp"
                 android:fontFamily="@font/mainfont"
+                android:hint="0000/00/00"
                 android:textSize="15sp"
                 android:padding="10sp"/>
         </LinearLayout>
-
+        <!--
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -106,7 +108,7 @@
 
             </RadioGroup>
         </LinearLayout>
-
+-->
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

@@ -233,6 +233,7 @@
                         android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
+            <!--
             <Button
                 android:id="@+id/clear"
                 android:layout_width="130sp"
@@ -243,6 +244,7 @@
                 android:fontFamily="@font/mainfont"
                 android:text="마음 지도 초기화"
                 android:background="@drawable/memo_background"/>
+                -->
         </LinearLayout>
     </ScrollView>
 

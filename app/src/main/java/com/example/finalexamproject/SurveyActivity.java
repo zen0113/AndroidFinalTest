@@ -78,6 +78,7 @@ public class SurveyActivity extends Activity implements View.OnClickListener{
             sdb = dbmgr.getWritableDatabase();
 
             sdb.execSQL("insert into members values('"+str_name+"','"+str_birth+"','"+str_gender+"', '"+str_stress+"');");
+            sdb.execSQL("insert into stress values('0','0','0','0','0');");
         }catch (SQLiteException e) {}
 
         Intent it = new Intent(this, ResultActivity.class);

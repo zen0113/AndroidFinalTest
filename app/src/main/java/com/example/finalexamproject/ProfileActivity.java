@@ -18,9 +18,9 @@ public class ProfileActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.profile);
 
         String sum = "";
+        DBManager dbmgr = new DBManager(this);
 
         try{
-            DBManager dbmgr = new DBManager(this);
 
             SQLiteDatabase sdb = dbmgr.getReadableDatabase();
 
@@ -99,11 +99,47 @@ public class ProfileActivity extends Activity implements View.OnClickListener{
             img_stress5.setVisibility(View.VISIBLE);
         }
 
+        try{
+            SQLiteDatabase sdb = dbmgr.getReadableDatabase();
+
+            Cursor cursor = sdb.rawQuery("select stress_1, stress_2, stress_3, stress_4, stress_5 from stress", null);
+
+            while(cursor.moveToNext())
+            {
+                int int_stress_1 = cursor.getInt(0);
+                int int_stress_2 = cursor.getInt(1);
+                int int_stress_3 = cursor.getInt(2);
+                int int_stress_4 = cursor.getInt(3);
+                int int_stress_5 = cursor.getInt(4);
+
+                TextView tv_stress_1 = (TextView) findViewById(R.id.cnt_1);
+                tv_stress_1.setText(int_stress_1+"개");
+
+                TextView tv_stress_2 = (TextView) findViewById(R.id.cnt_2);
+                tv_stress_2.setText(int_stress_2+"개");
+
+                TextView tv_stress_3 = (TextView) findViewById(R.id.cnt_3);
+                tv_stress_3.setText(int_stress_3+"개");
+
+                TextView tv_stress_4 = (TextView) findViewById(R.id.cnt_4);
+                tv_stress_4.setText(int_stress_4+"개");
+
+                TextView tv_stress_5 = (TextView) findViewById(R.id.cnt_5);
+                tv_stress_5.setText(int_stress_5+"개");
+
+            }
+            cursor.close();
+            dbmgr.close();
+
+        }catch (SQLiteException e)
+        {
+            TextView tv_list = new TextView(this);
+            tv_list.append("DB Error!!");
+        }
+
         Button btn_edit = (Button) findViewById(R.id.edit);
         btn_edit.setOnClickListener(this);
 
-        Button btn_clear =(Button) findViewById(R.id.clear);
-        btn_clear.setOnClickListener(this);
 
         Button btn_menu_write =(Button) findViewById(R.id.menu_write);
         btn_menu_write.setOnClickListener(this);

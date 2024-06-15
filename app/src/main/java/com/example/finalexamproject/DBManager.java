@@ -14,6 +14,7 @@ public class DBManager extends SQLiteOpenHelper {
     {
         db.execSQL("create table members(name text, birth text, gender text, stress text);");
         db.execSQL("create table diray(title text, date text, stress int, memo text)");
+        db.execSQL("create table stress(stress_1 int, stress_2 int, stress_3 int, stress_4 int, stress_5 int)");
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
