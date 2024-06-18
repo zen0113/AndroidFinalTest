@@ -39,27 +39,29 @@ public class DirayActivity extends Activity implements View.OnClickListener {
 
         int int_stress = countWordsInText(str_memo, wordsArray_1) - countWordsInText(str_memo, wordsArray_2);
 
-
-        try
+        if(str_title.length()!=0 && str_date.length()!=0 && str_memo.length()!=0)
         {
-            dbmgr = new DBManager(this);
-            SQLiteDatabase sdb;
-            sdb = dbmgr.getWritableDatabase();
+            try
+            {
+                dbmgr = new DBManager(this);
+                SQLiteDatabase sdb;
+                sdb = dbmgr.getWritableDatabase();
 
-            sdb.execSQL("insert into diray values('"+str_title+"','"+str_date+"','"+int_stress+"', '"+str_memo+"');");
+                sdb.execSQL("insert into diray values('"+str_title+"','"+str_date+"','"+int_stress+"', '"+str_memo+"');");
 
-            if(int_stress >= 5)
-                sdb.execSQL("update stress set stress_1 = stress_1 + 1;");
-            else if(int_stress < 5 && int_stress >= 3)
-                sdb.execSQL("update stress set stress_2 = stress_2 + 1;");
-            else if(int_stress < 3 && int_stress >= 0)
-                sdb.execSQL("update stress set stress_3 = stress_3 + 1;");
-            else if(int_stress < 0 && int_stress >= -3)
-                sdb.execSQL("update stress set stress_4 = stress_4 + 1;");
-            else
-                sdb.execSQL("update stress set stress_5 = stress_5 + 1;");
+                if(int_stress >= 7)
+                    sdb.execSQL("update stress set stress_1 = stress_1 + 1;");
+                else if(int_stress < 6 && int_stress >= 3)
+                    sdb.execSQL("update stress set stress_2 = stress_2 + 1;");
+                else if(int_stress < 3 && int_stress >= -2)
+                    sdb.execSQL("update stress set stress_3 = stress_3 + 1;");
+                else if(int_stress < -2 && int_stress >= -6)
+                    sdb.execSQL("update stress set stress_4 = stress_4 + 1;");
+                else
+                    sdb.execSQL("update stress set stress_5 = stress_5 + 1;");
 
-        }catch (SQLiteException e) {}
+            }catch (SQLiteException e) {}
+        }
 
 
 
